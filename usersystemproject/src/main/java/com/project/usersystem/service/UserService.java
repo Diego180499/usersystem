@@ -1,8 +1,8 @@
 package com.project.usersystem.service;
 
 
-import com.project.usersystem.dto.user.request.RequestUserDTO;
-import com.project.usersystem.dto.user.request.UserDTO;
+import com.project.usersystem.dto.user.RequestUserDTO;
+import com.project.usersystem.dto.commons.UserDTO;
 import com.project.usersystem.exception.BadRequestException;
 import com.project.usersystem.exception.InternalServerException;
 import com.project.usersystem.exception.NotFoundException;
@@ -18,6 +18,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 import static com.project.usersystem.utils.UserStatusEnum.USER_DISABLED;
@@ -66,6 +67,20 @@ public class UserService {
     private UserStatusEntity getUserStatusEntity(UserStatusEnum userStatusEnum){
         return userStatusRepository.findByUserStatusId(userStatusEnum.getStatus())
                 .orElseThrow(()-> new InternalServerException("UserStatus doesn´t exist"));
+    }
+
+
+    public ArrayList<UserDTO> findAll(){
+        ArrayList<UserEntity> userEntities = userRepository.findAll();
+        ArrayList<UserDTO> userDTOS = new ArrayList<>();
+        for (UserEntity user: userEntities) {
+            UserDTO userDTO = new UserDTO();
+            userDTO.setId(user.getUserId());
+            userDTO.setName(user.getName());
+            userDTO.setUsername(user.getUsername());
+            userDTOS.add(userDTO);
+        }
+        return userDTOS;
     }
 
 

@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.swing.text.html.Option;
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -38,6 +39,10 @@ public class UserRepository {
 
     public Optional<UserEntity> findById(String userId){
         return userCrud.findById(userId);
+    }
+
+    public ArrayList<UserEntity> findAll(){
+        return (ArrayList<UserEntity>) userCrud.findAll();
     }
 
 

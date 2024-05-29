@@ -1,4 +1,4 @@
-package com.project.usersystem.dto.user.request;
+package com.project.usersystem.dto.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserSaveRequestDTO {
-    private UserDTO user;
+public class RequestUserDTO {
+
+    private RequestUserSaveDTO request;
 }

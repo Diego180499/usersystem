@@ -1,8 +1,7 @@
 package com.project.usersystem.mappers;
 
-import com.project.usersystem.dto.user.request.UserDTO;
+import com.project.usersystem.dto.commons.UserDTO;
 import com.project.usersystem.repository.entities.UserEntity;
-import com.project.usersystem.repository.entities.UserStatusEntity;
 
 import java.util.Date;
 import java.util.UUID;
