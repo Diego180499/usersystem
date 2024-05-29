@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS user(
 user_id   VARCHAR(40) PRIMARY KEY,
 name      VARCHAR(100) NOT NULL,
 user_name  VARCHAR(100) NOT NULL,
-password_hashed  VARCHAR(50) NOT NULL,
+password_hashed  VARCHAR(100) NOT NULL,
 ts_insert  DATETIME NOT NULL,
 ts_update  DATETIME NOT NULL,
 status  INT(1) NOT NULL,
