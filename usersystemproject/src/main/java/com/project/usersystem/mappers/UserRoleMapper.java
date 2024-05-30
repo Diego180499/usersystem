@@ -1,7 +1,6 @@
 package com.project.usersystem.mappers;
 
 import com.project.usersystem.dto.userRole.RequestUserRoleDTO;
-import com.project.usersystem.repository.entities.UserEntity;
 import com.project.usersystem.repository.entities.UserRoleEntity;
 
 import java.util.Date;

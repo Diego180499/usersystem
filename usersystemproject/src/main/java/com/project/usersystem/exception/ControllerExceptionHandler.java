@@ -11,7 +11,7 @@ public class ControllerExceptionHandler {
 
     @ExceptionHandler(UserSystemException.class)
     public ResponseEntity<ErrorDTO> handleUserSystemException(UserSystemException userSystemException) {
-        log.warn("Flow finished by exception: {}",userSystemException.getMessage());
+        log.warn("Flow finished by exception: {}", userSystemException.getMessage());
         return ResponseEntity.status(userSystemException.getHttpStatus())
                 .body(new ErrorDTO(userSystemException.getMessage()));
     }

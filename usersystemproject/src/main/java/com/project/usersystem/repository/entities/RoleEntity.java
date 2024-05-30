@@ -1,13 +1,11 @@
 package com.project.usersystem.repository.entities;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -27,6 +25,9 @@ public class RoleEntity {
 
     @Column(name = "ts_update")
     private Date tsUpdate;
+
+    @OneToMany(mappedBy = "roleEntity")
+    private List<UserRoleEntity> userRoleEntities;
 
 
 }

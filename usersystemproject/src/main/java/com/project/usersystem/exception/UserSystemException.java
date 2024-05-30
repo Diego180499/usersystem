@@ -2,7 +2,7 @@ package com.project.usersystem.exception;
 
 import org.springframework.http.HttpStatus;
 
-public class UserSystemException  extends  RuntimeException{
+public class UserSystemException extends RuntimeException {
 
     private HttpStatus httpStatus;
 

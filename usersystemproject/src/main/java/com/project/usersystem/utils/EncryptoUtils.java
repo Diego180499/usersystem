@@ -13,7 +13,7 @@ public class EncryptoUtils {
      * @param originalPassword
      * @return hashedPassword
      */
-    public String encryptPassword(String originalPassword){
+    public String encryptPassword(String originalPassword) {
         BCryptPasswordEncoder encoderPW = new BCryptPasswordEncoder(16);
         return encoderPW.encode(originalPassword);
     }

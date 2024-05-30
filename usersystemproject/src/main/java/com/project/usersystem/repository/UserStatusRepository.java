@@ -14,10 +14,10 @@ public class UserStatusRepository {
 
     private UserStatusCrud userStatusCrud;
 
-    public Optional<UserStatusEntity> findByUserStatusId(Integer id){
-        try{
+    public Optional<UserStatusEntity> findByUserStatusId(Integer id) {
+        try {
             return Optional.ofNullable(userStatusCrud.findByStatusId(id));
-        }catch (Exception e){
+        } catch (Exception e) {
             return Optional.empty();
         }
     }

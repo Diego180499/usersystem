@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.context.annotation.Lazy;
 
-import java.util.Date;
+import java.util.*;
 
 @Entity
 @Table(name = "user")
@@ -32,5 +32,8 @@ public class UserEntity {
     @Lazy
     @ManyToOne
     private UserStatusEntity status;
+
+    @OneToMany(mappedBy = "userEntity")
+    private List<UserRoleEntity> userRoleEntities;
 
 }

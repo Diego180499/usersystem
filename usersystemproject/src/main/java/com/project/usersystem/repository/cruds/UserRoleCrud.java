@@ -5,10 +5,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 @Repository
 public interface UserRoleCrud extends CrudRepository<UserRoleEntity, String> {
 
     @Query(value = "SELECT * FROM user_role WHERE user_id = ? AND role_id = ?", nativeQuery = true)
     UserRoleEntity findByUserAndRole(String userId, String roleId);
+
+    @Query(value = "SELECT * FROM user_role WHERE user_id = ?", nativeQuery = true)
+    List<UserRoleEntity> findByUser(String userId);
 }

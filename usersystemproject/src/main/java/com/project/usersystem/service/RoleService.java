@@ -23,12 +23,12 @@ public class RoleService {
     private RoleRepository roleRepository;
 
 
-    public RoleDTO save(RequestRoleDTO requestRoleDTO){
+    public RoleDTO save(RequestRoleDTO requestRoleDTO) {
         RoleDTO roleDTO = Optional.ofNullable(requestRoleDTO)
                 .map(requestroleDTO -> requestroleDTO.getRequest())
                 .map(requestsaveDTO -> requestsaveDTO.getRole())
-                .orElseThrow(()-> new BadRequestException("The Role cannot be null"));
-        if(roleRepository.existRole(roleDTO.getRolename())){
+                .orElseThrow(() -> new BadRequestException("The Role cannot be null"));
+        if (roleRepository.existRole(roleDTO.getRolename())) {
             throw new PreConditionFailException("The Role already exist");
         }
 
@@ -38,7 +38,7 @@ public class RoleService {
     }
 
 
-    public ArrayList<RoleDTO> findAll(){
+    public ArrayList<RoleDTO> findAll() {
         ArrayList<RoleEntity> roleEntities = roleRepository.findAll();
         ArrayList<RoleDTO> roleDTOS = new ArrayList<>();
 

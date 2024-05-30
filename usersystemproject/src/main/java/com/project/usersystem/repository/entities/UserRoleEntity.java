@@ -16,13 +16,13 @@ public class UserRoleEntity {
     private String userRoleId;
 
 
-    @JoinColumn(name = "user_id",referencedColumnName = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     @Lazy
     @ManyToOne
     private UserEntity userEntity;
 
 
-    @JoinColumn(name = "role_id",referencedColumnName = "role_id")
+    @JoinColumn(name = "role_id", referencedColumnName = "role_id")
     @Lazy
     @ManyToOne
     private RoleEntity roleEntity;
@@ -32,5 +32,4 @@ public class UserRoleEntity {
 
     @Column(name = "ts_update")
     private Date tsUpdate;
-
 }
